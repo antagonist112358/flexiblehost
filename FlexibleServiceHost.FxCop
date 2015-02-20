@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.36" Name="FlexibleServiceHost FxCop">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files (x86)\microsoft fxcop 1.36\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/BuildArtifacts/Release/FlexibleServiceHost.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.36">
+  <Namespaces>
+   <Namespace Name="ServiceHosting">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2014-06-13 17:32:13Z">
+      <Issue>
+       <Item>ServiceHosting</Item>
+      </Issue>
+      <Notes>
+       <User Name="kdivincenzo">
+        <Note Id="0" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/BuildArtifacts/Release/FlexibleServiceHost.dll">
+    <Modules>
+     <Module Name="flexibleservicehost.dll">
+      <Namespaces>
+       <Namespace Name="ServiceHosting">
+        <Types>
+         <Type Name="Bootstrap">
+          <Members>
+           <Member Name="#Execute(System.String[])">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2014-06-13 18:09:16Z">
+              <Issue>
+               <Item>'Bootstrap.Execute(string[])'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'Bootstrap.Execute(string[])'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'Bootstrap.Execute(string[])'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'Bootstrap.Execute(string[])'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'Bootstrap.Execute(string[])'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Notes>
+               <User Name="kdivincenzo">
+                <Note Id="10" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Jumpstart`1(System.String,System.String,System.String,System.String[])">
+            <Messages>
+             <Message TypeName="GenericMethodsShouldProvideTypeParameter" Category="Microsoft.Design" CheckId="CA1004" Created="2014-06-13 18:09:16Z">
+              <Issue>
+               <Item>'Bootstrap.Jumpstart&lt;T&gt;(string, string, string, params string[])'</Item>
+               <Item>'T'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FlexibleServiceHost">
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'FlexibleServiceHost.FlexibleServiceHost(string)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="kdivincenzo">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InitializeHostedService`1(System.String,ServiceHosting.ServiceHostType)">
+            <Messages>
+             <Message TypeName="GenericMethodsShouldProvideTypeParameter" Category="Microsoft.Design" CheckId="CA1004" Status="Excluded" Created="2014-06-13 17:45:12Z">
+              <Issue>
+               <Item>'FlexibleServiceHost.InitializeHostedService&lt;T&gt;(string, ServiceHostType)'</Item>
+               <Item>'T'</Item>
+              </Issue>
+              <Notes>
+               <User Name="kdivincenzo">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InitializeHostedService`1(System.String,ServiceHosting.ServiceHostType,System.Object[])">
+            <Messages>
+             <Message TypeName="GenericMethodsShouldProvideTypeParameter" Category="Microsoft.Design" CheckId="CA1004" Status="Excluded" Created="2014-06-13 17:45:12Z">
+              <Issue>
+               <Item>'FlexibleServiceHost.InitializeHostedService&lt;T&gt;(string, ServiceHostType, params object[])'</Item>
+               <Item>'T'</Item>
+              </Issue>
+              <Notes>
+               <User Name="kdivincenzo">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#StartServiceHost(ServiceHosting.FlexibleServiceHost,System.String[])">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'FlexibleServiceHost.StartServiceHost(FlexibleServiceHost, string[])'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="kdivincenzo">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#StopServiceHost(ServiceHosting.FlexibleServiceHost)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'FlexibleServiceHost.StopServiceHost(FlexibleServiceHost)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Issue>
+               <Item>'FlexibleServiceHost.StopServiceHost(FlexibleServiceHost)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="kdivincenzo">
+                <Note Id="4" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ServiceInstaller">
+          <Members>
+           <Member Name="#InstallServiceAndStart()">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'ServiceInstaller.InstallServiceAndStart()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WindowsServiceManager">
+          <Members>
+           <Member Name="#GetServiceStatus(System.IntPtr)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.GetServiceStatus(IntPtr)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetServiceStatus(System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.GetServiceStatus(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#InstallAndStart(System.String,System.String,System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.InstallAndStart(string, string, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ServiceIsInstalled(System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.ServiceIsInstalled(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#StartService(System.IntPtr)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.StartService(IntPtr)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#StartService(System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.StartService(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#StopService(System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 17:32:13Z">
+              <Issue>
+               <Item>'WindowsServiceManager.StopService(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WindowsServiceManager+NativeMethods">
+          <Members>
+           <Member Name="#StartService(System.IntPtr,System.Int32,System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2014-06-13 20:08:06Z">
+              <Issue>
+               <Item>'WindowsServiceManager.NativeMethods.StartService(IntPtr, int, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="kdivincenzo">
+    <Note Id="0" Modified="2014-06-13 17:32:27Z">Only namespace in project.</Note>
+    <Note Id="3" Modified="2014-06-13 17:36:34Z">Class is instantiated by the framework.</Note>
+    <Note Id="4" Modified="2014-06-13 17:37:06Z">Intended behavior. Exceptions are caught before finalization code is executed, then rethrown or logged accordingly.</Note>
+    <Note Id="5" Modified="2014-06-13 17:37:33Z">Intended behavior - Exceptions are caught before finalization code is executed, then rethrown or logged accordingly.</Note>
+    <Note Id="7" Modified="2014-06-13 17:45:33Z">Compile type check of generic type is desired.</Note>
+    <Note Id="8" Modified="2014-06-13 17:45:39Z">Compile type check of generic type is desired.</Note>
+    <Note Id="10" Modified="2014-06-13 18:09:41Z">Intended behavior - Exception is caught by framework and logged accordingly.</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="GenericMethodsShouldProvideTypeParameter" Category="Microsoft.Design" CheckId="CA1004">
+    <Resolution Name="Default">Consider a design where {0} doesn't require explicit type parameter {1} in any call to it.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>
